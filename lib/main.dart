@@ -10,7 +10,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      theme: ThemeData(),
+      theme: ThemeData.dark(),
 
       initialRoute: MyHomePage.id,
       routes: {
@@ -43,7 +43,7 @@ class MyHomePage extends StatelessWidget {
                 tag: 'logo',
                 child: Container(
                   width: 200.0,
-                  child: Image.asset("assets/images/chef.png"),
+                  child: Image.asset("assets/images/logo.png"),
                 ),
               ),
             ],
@@ -55,9 +55,9 @@ class MyHomePage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               Text(
-                "ratatouille Chat",
+                "Ratatouille Chat",
                 style: TextStyle(
-                  fontFamily: 'Calistoga' ,
+                  fontFamily: 'Raleway' ,
                   fontSize: 40.0,
                 ),
               ),
@@ -70,13 +70,13 @@ class MyHomePage extends StatelessWidget {
           ),
 
           CustomButton(
-            text: "Log In",
+            text: "Ingresar",
             callback: () {
               Navigator.of(context).pushNamed(Login.id);
             },
           ),
           CustomButton(
-            text: "Register",
+            text: "Registrarse",
             callback: () {
               Navigator.of(context).pushNamed(Registration.id);
             },
@@ -155,10 +155,17 @@ class _RegistrationState extends State<Registration> {
               tag: 'logo',
               child: Container(
                 child: Image.asset(
-                  "assets/images/chef.png",
+                  "assets/images/logo.png",
                 ),
               ),
             ),
+          ),
+          Text(
+            "Registro",
+            style: TextStyle(
+              fontFamily: 'Calistoga' ,
+              fontSize: 40.0,
+          ),
           ),
           SizedBox(
             height: 40.0,
@@ -167,7 +174,7 @@ class _RegistrationState extends State<Registration> {
             keyboardType: TextInputType.emailAddress,
             onChanged: (value) => email = value,
             decoration: InputDecoration(
-              hintText: "Enter Your Email...",
+              hintText: "Ingrese e-mail",
               border: const OutlineInputBorder(),
             ),
           ),
@@ -179,12 +186,12 @@ class _RegistrationState extends State<Registration> {
             obscureText: true,
             onChanged: (value) => password = value,
             decoration: InputDecoration(
-              hintText: "Enter Your Password...",
+              hintText: "Ingrese contraseña",
               border: const OutlineInputBorder(),
             ),
           ),
           CustomButton(
-            text: "Register",
+            text: "Registrarse",
             callback: () async {
               await registerUser();
             },
@@ -238,7 +245,7 @@ class _LoginState extends State<Login> {
               tag: 'logo',
               child: Container(
                 child: Image.asset(
-                  "assets/images/chef.png",
+                  "assets/images/logo.png",
                 ),
               ),
             ),
@@ -250,7 +257,7 @@ class _LoginState extends State<Login> {
             keyboardType: TextInputType.emailAddress,
             onChanged: (value) => email = value,
             decoration: InputDecoration(
-              hintText: "Enter Your Email...",
+              hintText: "Ingrese su e mail",
               border: const OutlineInputBorder(),
             ),
           ),
@@ -262,7 +269,7 @@ class _LoginState extends State<Login> {
             obscureText: true,
             onChanged: (value) => password = value,
             decoration: InputDecoration(
-              hintText: "Enter Your Password...",
+              hintText: "Ingrese su contraseña",
               border: const OutlineInputBorder(),
             ),
           ),
@@ -318,7 +325,7 @@ class _ChatState extends State<Chat> {
           tag: 'logo',
           child: Container(
             height: 40.0,
-            child: Image.asset("assets/images/chef.png"),
+            child: Image.asset("assets/images/logo.png"),
           ),
         ),
         title: Text("Ratatouille Chat"),
@@ -374,7 +381,7 @@ class _ChatState extends State<Chat> {
                     child: TextField(
                       onSubmitted: (value) => callback(),
                       decoration: InputDecoration(
-                        hintText: "Enter a Message...",
+                        hintText: "Ingrese un Mensaje",
                         border: const OutlineInputBorder(),
                       ),
                       controller: messageController,
@@ -402,7 +409,7 @@ class SendButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FlatButton(
-      color: Colors.orange,
+      color: Colors.blueGrey,
       onPressed: callback,
       child: Text(text),
     );
@@ -428,7 +435,7 @@ class Message extends StatelessWidget {
             from,
           ),
           Material(
-            color: me ? Colors.teal : Colors.red,
+            color: me ? Colors.grey : Colors.black87,
             borderRadius: BorderRadius.circular(10.0),
             elevation: 6.0,
             child: Container(
