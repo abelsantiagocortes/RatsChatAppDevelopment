@@ -10,7 +10,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      theme: ThemeData.dark(),
+      theme: ThemeData(),
+
       initialRoute: MyHomePage.id,
       routes: {
 
@@ -30,8 +31,10 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
+
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
+
         children: <Widget>[
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -39,14 +42,8 @@ class MyHomePage extends StatelessWidget {
               Hero(
                 tag: 'logo',
                 child: Container(
-                  width: 100.0,
-                  child: Image.asset("assets/images/logo.png"),
-                ),
-              ),
-              Text(
-                "Rats Chat",
-                style: TextStyle(
-                  fontSize: 40.0,
+                  width: 200.0,
+                  child: Image.asset("assets/images/chef.png"),
                 ),
               ),
             ],
@@ -54,6 +51,24 @@ class MyHomePage extends StatelessWidget {
           SizedBox(
             height: 50.0,
           ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text(
+                "ratatouille Chat",
+                style: TextStyle(
+                  fontFamily: 'Calistoga' ,
+                  fontSize: 40.0,
+                ),
+              ),
+
+            ],
+          ),
+
+          SizedBox(
+            height: 50.0,
+          ),
+
           CustomButton(
             text: "Log In",
             callback: () {
@@ -80,14 +95,15 @@ class CustomButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.all(20.0),
       child: Material(
-        color: Colors.blueGrey,
+        color: Colors.grey,
+
         elevation: 6.0,
         borderRadius: BorderRadius.circular(30.0),
         child: MaterialButton(
           onPressed: callback,
-          minWidth: 200.0,
+          minWidth: 300.0,
           height: 45.0,
           child: Text(text),
         ),
@@ -128,7 +144,7 @@ class _RegistrationState extends State<Registration> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Rats Chat"),
+        title: Text("Ratatouille Chat"),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -139,7 +155,7 @@ class _RegistrationState extends State<Registration> {
               tag: 'logo',
               child: Container(
                 child: Image.asset(
-                  "assets/images/logo.png",
+                  "assets/images/chef.png",
                 ),
               ),
             ),
@@ -211,7 +227,7 @@ class _LoginState extends State<Login> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Rats Chat"),
+        title: Text("Ratatouille Chat"),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -222,7 +238,7 @@ class _LoginState extends State<Login> {
               tag: 'logo',
               child: Container(
                 child: Image.asset(
-                  "assets/images/logo.png",
+                  "assets/images/chef.png",
                 ),
               ),
             ),
@@ -302,10 +318,10 @@ class _ChatState extends State<Chat> {
           tag: 'logo',
           child: Container(
             height: 40.0,
-            child: Image.asset("assets/images/logo.png"),
+            child: Image.asset("assets/images/chef.png"),
           ),
         ),
-        title: Text("Rats Chat"),
+        title: Text("Ratatouille Chat"),
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.close),
