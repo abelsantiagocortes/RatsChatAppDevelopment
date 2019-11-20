@@ -144,7 +144,12 @@ class _RegistrationState extends State<Registration> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Ratatouille Chat"),
+        title: Text("Ratatouille Chat",
+          style: TextStyle(
+          fontFamily: 'Raleway' ,
+          fontSize: 20.0,
+        ),
+        ),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -163,7 +168,7 @@ class _RegistrationState extends State<Registration> {
           Text(
             "Registro",
             style: TextStyle(
-              fontFamily: 'Calistoga' ,
+              fontFamily: 'Raleway' ,
               fontSize: 40.0,
           ),
           ),
@@ -234,7 +239,12 @@ class _LoginState extends State<Login> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Ratatouille Chat"),
+        title: Text("Ratatouille Chat",
+          style: TextStyle(
+          fontFamily: 'Raleway' ,
+          fontSize: 20.0,
+        ),
+        ),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -248,6 +258,13 @@ class _LoginState extends State<Login> {
                   "assets/images/logo.png",
                 ),
               ),
+            ),
+          ),
+          Text(
+            "Ingresar",
+            style: TextStyle(
+              fontFamily: 'Raleway' ,
+              fontSize: 40.0,
             ),
           ),
           SizedBox(
@@ -274,7 +291,7 @@ class _LoginState extends State<Login> {
             ),
           ),
           CustomButton(
-            text: "Log In",
+            text: "Ingresar",
             callback: () async {
               await loginUser();
             },
@@ -328,7 +345,12 @@ class _ChatState extends State<Chat> {
             child: Image.asset("assets/images/logo.png"),
           ),
         ),
-        title: Text("Ratatouille Chat"),
+        title: Text("Ratatouille Chat",
+          style: TextStyle(
+          fontFamily: 'Raleway' ,
+          fontSize: 20.0,
+        ),
+        ),
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.close),
